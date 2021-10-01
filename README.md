@@ -2,8 +2,8 @@
 Popular codes for your college needs
 
 ## Python projects:
-Notemaker app- Tkinter
-Contacts app- Tkinter
+- Notemaker app- *Tkinter*
+- Contacts app- *Tkinter*
 
 ## Java projects:
 
