@@ -3,7 +3,7 @@ from tkinter import ttk
 from tkinter import messagebox as mb
 import sqlite3
 # import pyperclip
-#codes by minormist :)
+# Coded by minormist :)
 
 class Contact:
 
