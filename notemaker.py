@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox as mb
 import sqlite3
+# Coded by miormist :)
 
 class Note:
 
