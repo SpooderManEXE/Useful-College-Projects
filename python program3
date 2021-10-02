@@ -1,0 +1,19 @@
+def fibonacci(n):
+    a=0
+    b=1
+    count=0
+    if n<=0:
+        print("invalid!!")
+    elif n==1:
+        print(a)
+    else:
+        print("Generating fibonacci : ")
+        while count<n:
+            print(a)
+            temp=a+b
+            a = b
+            b = temp
+            count+=1
+
+n=int(input("Enter upto how many terms? : "))
+fibonacci(n)
