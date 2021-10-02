@@ -1,0 +1,10 @@
+#Here, I am displaying powers of any number using anonymous function.
+def anonymousfunc(n,terms):
+    answer = list(map(lambda x: n ** x,range(terms)))
+    print("Answers are :")
+    for i in range(terms):
+        print(n," raised to",i,"is",answer[i])
+        
+n=int(input("Enter the number : "))
+terms=int(input("How many terms ? : "))
+anonymousfunc(n,terms)
