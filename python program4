@@ -1,0 +1,9 @@
+def areaoftriangle(x,y,z):
+    s=(x+y+z)/2
+    return s
+
+x=float(input("Enter first side : "))
+y=float(input("Enter second side : "))
+z=float(input("Enter third side : "))
+print("The area of the triangle is :")
+print(areaoftriangle(x,y,z))
