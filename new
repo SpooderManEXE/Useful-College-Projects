@@ -1,0 +1,233 @@
+print('-'*198)
+print()
+print('^^ '*30,"           _ __ _",'^^ '*30)
+print('^^ '*30,'| |    | |  |  |','^^ '*30)
+print('^^ '*30,'| |    | |  |  |','^^ '*30)
+print('^^ '*30,'| |__| |  |  |','^^ '*30)
+print('^^ '*30,'|  __  |  |  |','^^ '*30)
+print('^^ '*30,'| |    | |  |  |','^^ '*30)
+print('^^'*30,'| |    | |  |  |','^^ '*30)
+print(' ^^^ '*30,'| |    | | ||','^^ '*30)
+print()
+print('-'*198)
+
+print()
+print()
+print('Welcome to the Code! I am V and I will be helping you around and cheer both of us!')
+print()
+print(input('Press enter if you want to continue else hit the power button.. '))
+print()
+print ('Great! you just made the perfect choice!')
+print('Now,obviously there are many interesting things to do.. like following your daily schedule')
+print('or just wasting a lot of time searching for just something entertaining ')
+print("Luckily, here are a few quick and interesting options you can choose from!")
+print(input('Press any key to continue..'))
+print('Congratulations! you just made a decision today')
+print('So, I will leave you to play around a bit.. ')
+print('See you sooooooon!')
+while True:
+    print("\t\t\t\t\t\tCHOOSE YOUR PREFERENCE")
+    print("1. EQ TEST")
+    print("2. MENTAL AGE TEST")
+    print("3. MATH RIDDLES")
+    print("4. PERSONALITY QUIZ")
+    print('5. EXIT')
+
+    print("ENTER YOUR CHOICE:")
+
+    k=int(input())
+
+    if k==1:
+        eq_test()
+    elif k ==2:
+        mental_age()
+    elif k ==3:
+        math_riddle()
+    elif k ==4:
+        personality_quiz()
+    elif k ==5:
+        break
+	  entertain():
+    def eq_test():
+    import pandas
+
+    import mysql.connector as connector
+
+
+    connection=connector.connect(host='localhost',user='root',password='root',database='quizes')
+    usecursor=connection.cursor()
+    usecursor.execute('select * from eq_test')
+    data = usecursor.fetchall()
+    eqtable= pandas.DataFrame(data)
+
+
+     def resultEQ(k):
+        print()
+
+        if k in range(36,41):
+            print('EXTRAORDINARY!')
+            print()
+            print('Your EQ is above 145')
+        elif k in range(31,36):
+            print('SUPERIOR!')
+            print()
+            print('your eq lie in range 135-145')
+        elif k in range(26,31):
+            print('GOOD!')
+            print()
+            print('your eq lie in range 115-130')
+        elif k in range(21,25):
+            print('NORMAL!')
+            print()
+            print('your eq lie in range 115-130')
+        else:
+            print('OOPS! your EQ is below average..')
+            print()
+            print('Your EQ is in range 75-100')
+
+    def optionsquiz(DF):
+        l = len(list(DF[1]))
+        k=0
+        for j in range(l):
+            print(DF.iloc[j,0])
+            print()
+
+            print(DF.iloc[j,1:])
+            q=int(input('Enter your preferred option:'))
+            k+=q
+        print(resultEQ(k))
+
+    print(optionsquiz(eqtable))
+
+
+
+4.	math_riddle() FUNCTION:
+
+def math_riddle():
+    import mysql.connector as connector
+    import pandas
+
+    connection=connector.connect(host='localhost',user='root',password='root',database='quizes')
+    usecursor=connection.cursor()
+    usecursor.execute('select * from mathriddles')
+    data = usecursor.fetchall()
+    mriddle=pandas.DataFrame(data)
+
+    l = len(list(mriddle[1]))
+
+    for i in range(l):
+        print()
+        print(mriddle.iloc[i,0])
+        print()
+        a=input('enter your answer here!')
+        print()
+        if a== mriddle.iloc[i,1]:
+            print('CORRECT ANSWER!!')
+        else:
+            print('OPPS!  wrong answer.. the correct answer is: ', mriddle.iloc[i,1])
+        print()
+
+
+5.	mental_age() FUNCTION:
+
+def mental_age():
+    import pandas
+    import mysql.connector as connector
+
+    connection=connector.connect(host='localhost',user='root',password='root',database='quizes')
+    usecursor=connection.cursor()
+    usecursor.execute('select * from test_mentalage')
+    data = usecursor.fetchall()
+    matable=pandas.DataFrame(data)
+
+    def resultma(k):
+        print()
+        if k in range(10,20):
+            print('Your mental age lies between 9 and 15 years of age!')
+        elif k in range(20,30):
+            print('Your mental age lies between 15 and 19 years of age!')
+        elif k in range(30, 34):
+            print('Your mental age lies between 20 and 29 years of age!')
+        elif k in range(34, 38):
+            print('Your mental age lies between 29 and 55 years of age!')
+        elif k in range(38, 40):
+            print('CONGRATULATIONS! YOU ARE 55 +')
+
+    l = len(list(matable[1]))
+    k=0
+    for j in range(l):
+            print(matable.iloc[j,0])
+            print()
+
+            print(matable.iloc[j,1:])
+            q=int(input('Enter your preferred option:'))
+            k+=q
+        print()
+    print()
+    print(resultma(k))
+    def personality_quiz():
+    import pandas
+    import mysql.connector as connector
+
+    connection=connector.connect(host='localhost',user='root',password='root',database='quizes')
+    usecursor=connection.cursor()
+    usecursor.execute('select * from personality_test1')
+    data = usecursor.fetchall()
+
+    perquiz=pandas.DataFrame(data)
+
+    l = len(list(perquiz[1]))
+
+    print("This personality quiz contains no options, but your answers reveals about your personality and what your true self is.")
+    print()
+    print("To complete this quiz you have to simply answer the questions and maybe write down your answers just in case.")
+    print()
+    print("At the end of the quiz, the meaning behind every question is explained.Hopefully, the quiz is pretty reliable so have fun!")
+    print()
+
+    p= input("Press enter to continue")
+
+    for i in range(l):
+        print(perquiz.iloc[i,0])
+        print()
+        y=input("Press any key for next question")
+        print()
+
+    print("Hopefully you remember your answers or have them written for reference.")
+    print()
+    p=input("press any key to display")
+    print()
+    for f in range(l):
+        print(perquiz.iloc[f,1])
+        print()
+        y=input("press any key for next secret!")
+        def entertain():
+    import random as random
+    a="29th May is officially 'Put a Pillow on Your Fridge Day'"
+    b='If Pinocchio says “My Nose Will Grow Now”, it would cause a paradox.'
+    c='The United States Navy has started using Xbox controllers for their periscopes.'
+    d="In the 16th Century, Arab women could initiate a divorce if their husbands didn’t pour coffee for them."
+    e='Recycling one glass jar saves enough energy to watch television for 3 hours.'
+    f='An apple, potato, and onion all taste the same if you eat them with your nose plugged.'
+    g='Vincent van Gogh only sold one painting in his lifetime.'
+    h="Coca-Cola owns all website URLs that can be read as ahh, all the way up to 62 h’s."
+    i='During your lifetime, you will spend around thirty-eight days brushing your teeth.'
+    j='Ronald McDonald is “Donald McDonald” in Japan because it makes pronunciation easier for the Japanese.'
+    k='People with brain damage can suffer from “joke addiction”.'
+    l='Most Korean people don’t have armpit odor.'
+    m='The Elysia Chlorotica, a green sea slug, is the first animal ever discovered to create chlorophyll like a plant.'
+    n='Scientists studying a deadly disease transmitted from camels also found camels contain the pathogens from which the common cold was born.'
+    o='The Louvre in Paris is so large that it would take 100 days to look at each piece.'
+    p='In the 18th Century Smallpox scars would get you a job.'
+    q='Before 1913, you could legally mail a baby.'
+    r='Hawaiian pizza is a Canadian invention.'
+    s='Chickens are the closest living relatives to the T-Rex.'
+    t='QWERTY keyboards were originally supposed to slow down typing.'
+    u='You get Goosebumps when you’re scared to make you look bigger.'
+    v='Russia defrosted some prehistoric worms, and two woke up.'
+    w='Crows can hold grudges against specific individual people.'
+    x='On Saturn’s largest moon, Titan, a person could fly by attaching wings to their arms.'
+
+    L=[q,w,e,r,t,a,u,i,o,p,s,d,f,g,h,j,k,l,x,c,v,b,n,m]
+\\random choice
+    print(random.choice(L))
