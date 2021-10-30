@@ -1,0 +1,19 @@
+
+public class PABV {
+public static void main(String [] args) {
+	int x = 6;
+	increment(x);
+	System.out.println(x);
+	int y = 7;
+	decrement(y);
+	System.out.println(y);
+}
+public static void increment(int x) {
+	x++;
+	System.out.println(x);
+}
+public static void decrement(int y) {
+	++y;
+	System.out.println(y);
+}
+}
