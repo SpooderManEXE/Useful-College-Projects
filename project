@@ -1,0 +1,64 @@
+import java.util.Scanner;
+public class Project1 {
+	
+	public static boolean checkLength(String s){
+	        if(s.length()==8){
+	            return true;
+	        }
+	        return false;
+	    }
+	    public static boolean checkIntChar(String s){
+	        boolean check=false;
+	        for(int i=0;i<s.length();i++){
+	            if(s.charAt(i)>='0' && s.charAt(i)<='9'){
+	                check=true;
+	            }
+	            else if(s.charAt(i)>='a'&& s.charAt(i)<='z'){
+	                check=true;
+	            }else{
+	                check=false;
+	            }
+	        }
+	        return check;
+	    }
+	     public static boolean digitCheck(String s){
+	        int count=0;
+	        for(int i=0;i<s.length();i++){
+	        
+	          if(s.charAt(i)>='0' && s.charAt(i)<='9'){
+	              count++;
+	          }
+	        }  
+	          if(count>=2){
+	              return true;
+	          }
+	          else{
+	              return false;
+	          }
+	        
+	    }
+	    public static void main(String []args){
+	        System.out.println("Enter the password: ");
+	        Scanner obj=new Scanner(System.in);
+	        String pass=obj.nextLine();
+	        System.out.println("The password entered by the user is:"+ pass);
+	        if(checkLength(pass)&& checkIntChar(pass)&&digitCheck(pass)){
+	        System.out.println("PAssword is valid");    
+	        }
+	        else{
+	            System.out.println("Password is invalid");
+	        }
+	        
+	     }
+	}
+
+		
+
+	
+
+				 
+
+
+
+
+ 
